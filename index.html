@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ВРТ-Интеллект | Интеллектуальная система поддержки принятия решений</title>
     <style>
-        /* Общие стили */
+        /* --- ОБЩИЕ СТИЛИ --- */
         :root {
             --primary-color: #0056b3;
             --secondary-color: #00a0e3;
-            --accent-color: #e30613; /* Цвет из логотипа фонда */
+            --accent-color: #e30613;
             --text-color: #333;
             --bg-light: #f4f8fb;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -20,6 +24,7 @@
             padding: 0;
             color: var(--text-color);
             line-height: 1.6;
+            background-color: #fff;
         }
 
         h1, h2, h3 {
@@ -33,44 +38,72 @@
             padding: 0 20px;
         }
 
-        /* Шапка (Hero Section) */
+        /* --- ШАПКА (HERO) --- */
         .hero {
             background: linear-gradient(135deg, #eef7fc 0%, #ffffff 100%);
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
             border-bottom: 5px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             color: var(--primary-color);
+            line-height: 1.2;
+            animation: fadeInDown 1s ease;
         }
 
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto;
             color: #555;
+            animation: fadeInUp 1s ease;
         }
 
         .product-name {
             font-weight: bold;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: var(--accent-color);
             margin-bottom: 15px;
             display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        /* Секции контента */
+        /* Анимации */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- СЕКЦИИ --- */
         .section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
         .grid {
@@ -83,18 +116,32 @@
             .grid {
                 grid-template-columns: 1fr;
             }
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
 
+        /* --- КАРТОЧКИ --- */
         .card {
             background: #fff;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-top: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .card h3 {
             margin-top: 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         ul {
@@ -105,20 +152,16 @@
             margin-bottom: 10px;
         }
 
-        /* Блок с преимуществами */
+        /* --- БЛОК ПРЕИМУЩЕСТВ --- */
         .advantages {
             background-color: var(--bg-light);
         }
 
-        .advantage-item {
-            margin-bottom: 20px;
-        }
-
-        /* Подвал и гранты */
+        /* --- ПОДВАЛ И ГРАНТЫ --- */
         .footer-grants {
             background-color: #fff;
-            padding: 40px 0;
-            border-top: 1px solid #ddd;
+            padding: 60px 0;
+            border-top: 1px solid #eaeaea;
             text-align: center;
         }
 
@@ -126,29 +169,43 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px;
+            gap: 50px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
         }
 
         .logos-container img {
-            height: 60px; /* Высота логотипов */
+            height: 70px; /* Фиксированная высота для аккуратности */
+            width: auto;
             object-fit: contain;
+            filter: grayscale(0%);
+            transition: filter 0.3s;
+        }
+        
+        .logos-container img:hover {
+            filter: grayscale(100%); /* Эффект при наведении (по желанию можно убрать) */
         }
 
         .grant-text {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #666;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             font-style: italic;
+            line-height: 1.8;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 20px;
+            text-align: left;
         }
 
         footer {
             background-color: #333;
-            color: #fff;
+            color: #aaa;
             text-align: center;
-            padding: 20px 0;
+            padding: 25px 0;
             font-size: 0.9rem;
         }
     </style>
@@ -159,8 +216,8 @@
     <header class="hero">
         <div class="container">
             <span class="product-name">Программа для ЭВМ</span>
-            <h1>«Интеллектуальная система поддержки принятия решений в области ВРТ "ВРТ-Интеллект"»</h1>
-            <p>Инновационный инструмент для врачей-репродуктологов, повышающий вероятность успеха процедуры ЭКО с первой попытки на основе анализа больших данных.</p>
+            <h1>«ВРТ-Интеллект»</h1>
+            <p>Интеллектуальная система поддержки принятия решений в области вспомогательных репродуктивных технологий. Повышает вероятность успеха ЭКО с первой попытки на основе анализа больших данных.</p>
         </div>
     </header>
 
@@ -173,7 +230,11 @@
                     <h3>Проблема и решение</h3>
                     <p>Традиционный подход к выбору протокола ЭКО часто основывается только на опыте врача. Это несет риски снижения эффективности процедуры.</p>
                     <p><strong>Наше решение:</strong> Система анализирует данные других пациентов со схожими параметрами и положительным результатом, предоставляя врачу персонализированные рекомендации.</p>
-                
+                </div>
+                <div class="card">
+                    <h3>Назначение системы</h3>
+                    <p>Предназначена для подбора индивидуального протокола ЭКО и прогнозирования успешности процедуры. Объединяет клинические, анамнестические, гормональные и лабораторные показатели для оперативной адаптации протокола лечения.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -185,11 +246,11 @@
             <div class="grid">
                 <div class="card">
                     <h3>Клиническая репродуктология</h3>
-                    <p>Помощь врачам в принятии решений и повышение эффективности лечения бесплодия.</p>
+                    <p>Помощь врачам в принятии решений и повышение эффективности лечения.</p>
                 </div>
                 <div class="card">
                     <h3>Научные исследования</h3>
-                    <p>Анализ факторов бесплодия на данных для выявления новых закономерностей.</p>
+                    <p>Анализ факторов бесплодия для выявления новых закономерностей.</p>
                 </div>
                 <div class="card">
                     <h3>Государственные программы</h3>
@@ -200,7 +261,6 @@
                     <ul>
                         <li>Прогнозирование вероятности исхода процедуры.</li>
                         <li>Персонализированные рекомендации по протоколу.</li>
-                        
                     </ul>
                 </div>
             </div>
@@ -211,9 +271,8 @@
     <section class="footer-grants">
         <div class="container">
             <div class="logos-container">
-                <!-- Логотип Фонда содействия инновациям -->
+                <!-- ВАЖНО: Убедитесь, что имена файлов совпадают с теми, что вы загрузили в GitHub -->
                 <img src="head_logo_fasie.png" alt="Фонд содействия инновациям">
-                <!-- Логотип Платформы университетского технологического предпринимательства -->
                 <img src="Лого_ПУТП_web - фиолет-RGB.png" alt="Платформа университетского технологического предпринимательства">
             </div>
             <p class="grant-text">
@@ -224,7 +283,7 @@
 
     <footer>
         <div class="container">
-            &copy; 2026 ВРТ-Интеллект.
+            &copy; 2026 ВРТ-Интеллект. Все права защищены.
         </div>
     </footer>
 
