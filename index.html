@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВРТ-Интеллект | Интеллектуальная система поддержки принятия решений</title>
+    <style>
+        /* Общие стили */
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a0e3;
+            --accent-color: #e30613; /* Цвет из логотипа фонда */
+            --text-color: #333;
+            --bg-light: #f4f8fb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка (Hero Section) */
+        .hero {
+            background: linear-gradient(135deg, #eef7fc 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            color: #555;
+        }
+
+        .product-name {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Секции контента */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Блок с преимуществами */
+        .advantages {
+            background-color: var(--bg-light);
+        }
+
+        .advantage-item {
+            margin-bottom: 20px;
+        }
+
+        /* Подвал и гранты */
+        .footer-grants {
+            background-color: #fff;
+            padding: 40px 0;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .logos-container img {
+            height: 60px; /* Высота логотипов */
+            object-fit: contain;
+        }
+
+        .grant-text {
+            font-size: 0.9rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Главный экран -->
+    <header class="hero">
+        <div class="container">
+            <span class="product-name">Программа для ЭВМ</span>
+            <h1>«Интеллектуальная система поддержки принятия решений в области ВРТ "ВРТ-Интеллект"»</h1>
+            <p>Инновационный инструмент для врачей-репродуктологов, повышающий вероятность успеха процедуры ЭКО с первой попытки на основе анализа больших данных.</p>
+        </div>
+    </header>
+
+    <!-- О продукте -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">О продукте</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Проблема и решение</h3>
+                    <p>Традиционный подход к выбору протокола ЭКО часто основывается только на опыте врача. Это несет риски снижения эффективности процедуры.</p>
+                    <p><strong>Наше решение:</strong> Система анализирует данные других пациентов со схожими параметрами и положительным результатом, предоставляя врачу персонализированные рекомендации.</p>
+                </div>
+                <div class="card">
+                    <h3>Назначение</h3>
+                    <p>Система предназначена для подбора индивидуального протокола ЭКО и прогнозирования успешности процедуры.</p>
+                    <p>Объединяет клинические, анамнестические, гормональные и лабораторные показатели для оперативной адаптации протокола лечения в зависимости от текущего состояния пациентки.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Область применения -->
+    <section class="section advantages">
+        <div class="container">
+            <h2 class="section-title">Область применения</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Клиническая репродуктология</h3>
+                    <p>Помощь врачам в принятии решений и повышение эффективности лечения бесплодия.</p>
+                </div>
+                <div class="card">
+                    <h3>Научные исследования</h3>
+                    <p>Анализ факторов бесплодия на больших данных (Big Data) для выявления новых закономерностей.</p>
+                </div>
+                <div class="card">
+                    <h3>Государственные программы</h3>
+                    <p>Повышение эффективности процедур ЭКО, проводимых по полису ОМС.</p>
+                </div>
+                <div class="card">
+                    <h3>Функционал</h3>
+                    <ul>
+                        <li>Прогнозирование вероятности исхода процедуры.</li>
+                        <li>Персонализированные рекомендации по протоколу.</li>
+                        <li>Работа с большими массивами медицинских данных.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок с логотипами и грантом -->
+    <section class="footer-grants">
+        <div class="container">
+            <div class="logos-container">
+                <!-- Логотип Фонда содействия инновациям -->
+                <img src="head_logo_fasie.png" alt="Фонд содействия инновациям">
+                <!-- Логотип Платформы университетского технологического предпринимательства -->
+                <img src="Лого_ПУТП_web - фиолет-RGB.png" alt="Платформа университетского технологического предпринимательства">
+            </div>
+            <p class="grant-text">
+                Проект реализован при поддержке Фонда содействия инновациям в рамках программы «Студенческий стартап» мероприятия «Платформа университетского технологического предпринимательства» федерального проекта «Технологии».
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2024 ВРТ-Интеллект. Все права защищены.
+        </div>
+    </footer>
+
+</body>
+</html>
